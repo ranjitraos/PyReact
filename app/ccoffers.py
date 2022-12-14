@@ -6,11 +6,12 @@ def main():
     args = parser.parse_args()
     user_input = args.input
 
-    res = fetchCreditCardOffers(user_input)
+    res = fetch_credit_card_offers(user_input)
     print(res)
 
-def fetchCreditCardOffers(card: str) -> str:
+def fetch_credit_card_offers(card: str) -> str:
     offers = {"swiggy": "40% off"}
+    if card == "hdfc": offers["swiggy"] = "25% off"
     return offers
 
 if __name__ == "__main__":
